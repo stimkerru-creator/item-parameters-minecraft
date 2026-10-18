@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "audit:add_yield_fields",
+  "inputs": {
+    "part": "minecraft:gold_ingot"
+  },
+  "output": {
+    "item": "minecraft:diamond",
+    "count": 1
+  },
+  "copy_common_from": "part",
+  "base": {
+    "audit2:energy_kj": 3.2
+  },
+  "assignments": {
+    "audit2:waste_mass_g": "${part::audit2:mass_g} * (1 - ${part::audit2:purity_pct} / 100)",
+    "audit2:yield_pct": "${part::audit2:purity_pct}"
+  }
+}

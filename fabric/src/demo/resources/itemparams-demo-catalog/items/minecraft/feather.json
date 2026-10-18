@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "item": "minecraft:feather",
+  "fields": [
+    {
+      "id": "audit3:density_g_cm3",
+      "default": 8.96
+    },
+    {
+      "id": "audit3:volume_cm3",
+      "default": 0.5
+    },
+    {
+      "id": "audit3:purity_pct",
+      "default": 99.5
+    },
+    {
+      "id": "audit3:energy_kj",
+      "default": 1.5
+    }
+  ]
+}

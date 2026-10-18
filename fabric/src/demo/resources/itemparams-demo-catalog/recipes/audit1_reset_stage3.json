@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "audit:line1_reset_stage3",
+  "inputs": {
+    "processed": "minecraft:glass_bottle"
+  },
+  "output": {
+    "item": "minecraft:stick",
+    "count": 1
+  },
+  "assignments": {
+    "example:mass": "10",
+    "example:strength": "10",
+    "example:quality": "10",
+    "example:moisture": "${processed::example:volume} + ${processed::example:mass} + ${processed::example:thickness} + ${processed::example:removed_volume}"
+  }
+}

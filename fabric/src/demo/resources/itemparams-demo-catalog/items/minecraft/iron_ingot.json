@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "item": "minecraft:iron_ingot",
+  "fields": [
+    {
+      "id": "audit2:mass_g",
+      "default": 15.7
+    },
+    {
+      "id": "audit2:purity_pct",
+      "default": 98.0
+    },
+    {
+      "id": "audit2:hardness_index",
+      "default": 4.0
+    },
+    {
+      "id": "audit2:volume_cm3",
+      "default": 2.0
+    }
+  ]
+}

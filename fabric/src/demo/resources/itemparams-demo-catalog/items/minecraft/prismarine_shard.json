@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "item": "minecraft:prismarine_shard",
+  "fields": [
+    {
+      "id": "audit4:mass_g",
+      "default": 0.3
+    },
+    {
+      "id": "audit4:purity_pct",
+      "default": 85
+    },
+    {
+      "id": "audit4:volume_cm3",
+      "default": 0.2
+    },
+    {
+      "id": "audit4:strength_score",
+      "default": 3
+    },
+    {
+      "id": "audit4:wear",
+      "default": 2
+    }
+  ]
+}

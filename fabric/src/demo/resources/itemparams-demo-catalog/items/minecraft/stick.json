@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "item": "minecraft:stick",
+  "fields": [
+    { "id": "example:mass", "default": 10, "min": 0, "max": 1000000 },
+    { "id": "example:strength", "default": 12, "min": 0, "max": 1000000 },
+    { "id": "example:quality", "default": 24, "min": 0, "max": 1000000 },
+    { "id": "example:moisture", "default": 0, "min": 0, "max": 1000000 }
+  ]
+}

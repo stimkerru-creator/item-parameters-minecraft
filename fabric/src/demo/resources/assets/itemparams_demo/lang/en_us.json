@@ -1,0 +1,14 @@
+{
+  "block.itemparams_demo.processor": "Parameter Processor",
+  "container.itemparams_demo.processor": "Parameter Processor",
+  "gui.itemparams_demo.inputs": "Inputs",
+  "gui.itemparams_demo.output": "Output",
+  "gui.itemparams_demo.idle": "Waiting for inputs",
+  "gui.itemparams_demo.working": "Processing",
+  "gui.itemparams_demo.output_full": "Output full or incompatible",
+  "gui.itemparams_demo.invalid_recipe": "No valid configured recipe",
+  "gui.itemparams_demo.error": "Input or formula error",
+  "gui.itemparams_demo.no_recipes": "No configured recipes",
+  "gui.itemparams_demo.recipe_locked": "Remove inputs to change recipe",
+  "gui.itemparams_demo.reset": "Reset"
+}

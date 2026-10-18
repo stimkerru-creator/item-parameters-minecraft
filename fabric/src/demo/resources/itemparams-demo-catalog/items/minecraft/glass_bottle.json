@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "item": "minecraft:glass_bottle",
+  "fields": [
+    { "id": "example:volume", "default": 1000, "min": 0, "max": 1000000 },
+    { "id": "example:mass", "default": 250, "min": 0, "max": 1000000 },
+    { "id": "example:thickness", "default": 2, "min": 0, "max": 10000 },
+    { "id": "example:removed_volume", "default": 10, "min": 0, "max": 1000000 }
+  ]
+}

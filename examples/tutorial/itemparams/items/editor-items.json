@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "item": "minecraft:raw_iron",
+      "fields": [
+        {
+          "id": "factory:mass",
+          "default": 1000,
+          "min": -21474836.48,
+          "max": 21474836.47
+        },
+        {
+          "id": "factory:purity",
+          "default": 80,
+          "min": -21474836.48,
+          "max": 21474836.47
+        }
+      ]
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "fields": [
+        {
+          "id": "factory:mass",
+          "default": 0,
+          "min": -21474836.48,
+          "max": 21474836.47
+        },
+        {
+          "id": "factory:purity",
+          "default": 0,
+          "min": -21474836.48,
+          "max": 21474836.47
+        },
+        {
+          "id": "factory:hardness",
+          "default": 0,
+          "min": -21474836.48,
+          "max": 21474836.47
+        }
+      ]
+    }
+  ]
+}

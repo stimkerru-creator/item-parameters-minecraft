@@ -1,0 +1,15 @@
+Item Parameters Editor
+
+The standalone editor includes the same EvalEx/Spire dependencies as the numeric
+core. Their notices are in META-INF/THIRD-PARTY-NOTICES.txt and original embedded
+license files. The standalone editor also bundles the shared JSON dependency:
+
+com.google.code.gson:gson:2.10.1
+Copyright 2008 Google Inc. Apache License, Version 2.0.
+https://github.com/google/gson/blob/gson-parent-2.10.1/LICENSE
+The full Apache License, Version 2.0 is provided at
+META-INF/licenses/EvalEx-LICENSE.txt.
+
+The core declares Gson for the shared StrictJson API; the Fabric runtime uses
+Minecraft's Gson. No Minecraft or Fabric classes are bundled in the editor.
+Swing and AWT are components of the Java desktop runtime, not bundled libraries.

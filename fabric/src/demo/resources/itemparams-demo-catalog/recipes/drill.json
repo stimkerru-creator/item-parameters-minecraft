@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "id": "example:drill",
+  "inputs": { "bottle": "minecraft:glass_bottle" },
+  "output": { "item": "minecraft:glass_bottle", "count": 1 },
+  "copy_common_from": "bottle",
+  "assignments": {
+    "example:volume": "max(0, ${bottle::example:volume} - ${bottle::example:removed_volume})",
+    "example:mass": "${bottle::example:mass} * (max(0, ${bottle::example:volume} - ${bottle::example:removed_volume}) / ${bottle::example:volume})",
+    "example:thickness": "${bottle::example:thickness}",
+    "example:removed_volume": "${bottle::example:removed_volume}"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["III", "IFI", "IRI"],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "F": { "item": "minecraft:furnace" },
+    "R": { "item": "minecraft:redstone" }
+  },
+  "result": {
+    "item": "itemparams_demo:processor",
+    "count": 1
+  }
+}

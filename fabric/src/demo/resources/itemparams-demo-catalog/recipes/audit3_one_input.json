@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "id": "audit:machining_one",
+  "inputs": {
+    "blank": "minecraft:flint"
+  },
+  "output": {
+    "item": "minecraft:compass",
+    "count": 1
+  },
+  "copy_common_from": "blank",
+  "assignments": {
+    "audit3:mass_g": "${blank::audit3:mass_g} * 0.95",
+    "audit3:volume_cm3": "${blank::audit3:volume_cm3} * 0.95",
+    "audit3:purity_pct": "${blank::audit3:purity_pct}",
+    "audit3:energy_kj": "${blank::audit3:energy_kj} + 1.20"
+  }
+}

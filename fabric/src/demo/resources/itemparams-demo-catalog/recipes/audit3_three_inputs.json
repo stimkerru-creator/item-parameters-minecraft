@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "audit:assembly_three",
+  "inputs": {
+    "steel": "minecraft:iron_nugget",
+    "aluminum": "minecraft:gold_nugget",
+    "copper": "minecraft:feather"
+  },
+  "output": {
+    "item": "minecraft:flint",
+    "count": 1
+  },
+  "assignments": {
+    "audit3:mass_g": "${steel::audit3:density_g_cm3} * ${steel::audit3:volume_cm3} + ${aluminum::audit3:density_g_cm3} * ${aluminum::audit3:volume_cm3} + ${copper::audit3:density_g_cm3} * ${copper::audit3:volume_cm3}",
+    "audit3:purity_pct": "(${steel::audit3:density_g_cm3} * ${steel::audit3:volume_cm3} * ${steel::audit3:purity_pct} + ${aluminum::audit3:density_g_cm3} * ${aluminum::audit3:volume_cm3} * ${aluminum::audit3:purity_pct} + ${copper::audit3:density_g_cm3} * ${copper::audit3:volume_cm3} * ${copper::audit3:purity_pct}) / (${steel::audit3:density_g_cm3} * ${steel::audit3:volume_cm3} + ${aluminum::audit3:density_g_cm3} * ${aluminum::audit3:volume_cm3} + ${copper::audit3:density_g_cm3} * ${copper::audit3:volume_cm3})",
+    "audit3:volume_cm3": "${steel::audit3:volume_cm3} + ${aluminum::audit3:volume_cm3} + ${copper::audit3:volume_cm3}",
+    "audit3:energy_kj": "${steel::audit3:energy_kj} + ${aluminum::audit3:energy_kj} + ${copper::audit3:energy_kj}"
+  }
+}

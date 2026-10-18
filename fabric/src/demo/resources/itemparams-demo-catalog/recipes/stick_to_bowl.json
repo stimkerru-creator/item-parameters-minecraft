@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "id": "example:stick_to_bowl",
+  "inputs": { "wood": "minecraft:stick" },
+  "output": { "item": "minecraft:bowl", "count": 1 },
+  "copy_common_from": "wood",
+  "base": {
+    "example:hardness": 10
+  },
+  "assignments": {
+    "example:strength": "${wood::example:strength} + 3",
+    "example:quality": "${wood::example:quality} / 8",
+    "example:moisture": "${wood::example:moisture} + 10",
+    "example:precision": "sqrt(16)"
+  }
+}

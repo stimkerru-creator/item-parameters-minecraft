@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "example:bowl_to_chest",
+  "inputs": { "bowl": "minecraft:bowl" },
+  "output": { "item": "minecraft:chest", "count": 1 },
+  "copy_common_from": "bowl",
+  "assignments": {
+    "example:volume": "${bowl::example:mass} * 4",
+    "example:integrity": "${bowl::example:strength} * ${bowl::example:hardness}"
+  }
+}

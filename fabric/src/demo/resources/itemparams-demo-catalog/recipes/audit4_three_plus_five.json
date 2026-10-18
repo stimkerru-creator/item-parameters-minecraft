@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "id": "audit:mix_three_and_five",
+  "inputs": {
+    "light_component": "minecraft:apple",
+    "reinforcement": "minecraft:book"
+  },
+  "output": {
+    "item": "minecraft:amethyst_shard",
+    "count": 1
+  },
+  "assignments": {
+    "audit4:mass_g": "${light_component::audit4:mass_g} + ${reinforcement::audit4:mass_g}",
+    "audit4:purity_pct": "(${light_component::audit4:mass_g} * ${light_component::audit4:purity_pct} + ${reinforcement::audit4:mass_g} * ${reinforcement::audit4:purity_pct}) / (${light_component::audit4:mass_g} + ${reinforcement::audit4:mass_g})",
+    "audit4:volume_cm3": "${light_component::audit4:volume_cm3} + ${reinforcement::audit4:volume_cm3}",
+    "audit4:strength_score": "${reinforcement::audit4:strength_score}",
+    "audit4:wear": "${reinforcement::audit4:wear}",
+    "audit4:quality_index": "sqrt(${light_component::audit4:purity_pct} * ${reinforcement::audit4:purity_pct})"
+  }
+}

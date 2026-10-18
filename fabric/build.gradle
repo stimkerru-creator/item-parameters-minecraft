@@ -1,0 +1,130 @@
+import net.fabricmc.loom.task.RemapJarTask
+import org.gradle.api.artifacts.component.ModuleComponentIdentifier
+
+plugins {
+    id 'fabric-loom' version '1.6.12'
+    id 'maven-publish'
+}
+
+base { archivesName = 'item-parameters-fabric' }
+configurations {
+    bundledLibraries {
+        canBeConsumed = false
+        attributes { attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_RUNTIME)) }
+    }
+}
+dependencies {
+    implementation project(':core')
+    include project(':core')
+    bundledLibraries project(':core')
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings 'net.fabricmc:yarn:1.20.1+build.10:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.15.11'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.2+1.20.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+    testImplementation 'net.fabricmc:fabric-loader-junit:0.15.11'
+    testCompileOnly project(':editor')
+}
+
+// Loom include is not transitive. Embed the core's unchanged mathematical runtime JARs.
+// Minecraft supplies compatible Gson; do not install a second Gson JAR as a mod.
+configurations.bundledLibraries.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+    if (artifact.id.componentIdentifier instanceof ModuleComponentIdentifier &&
+            artifact.moduleVersion.id.group != 'com.google.code.gson') {
+        dependencies.add('include', artifact.moduleVersion.id.toString())
+    }
+}
+
+evaluationDependsOn(':editor')
+sourceSets {
+    demo {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+    test {
+        compileClasspath += sourceSets.demo.output
+        runtimeClasspath += sourceSets.demo.output + project(':editor').sourceSets.main.output
+    }
+}
+loom {
+    mods {
+        itemparams { sourceSet sourceSets.main }
+        itemparams_demo { sourceSet sourceSets.demo }
+    }
+    runs {
+        demoClient { client(); source sourceSets.demo; runDir 'run-demo-client' }
+        demoServer { server(); source sourceSets.demo; runDir 'run-demo-server' }
+    }
+}
+tasks.named('compileTestJava') { dependsOn tasks.named('demoClasses'), project(':editor').tasks.named('classes') }
+tasks.withType(Test).configureEach { systemProperty 'fabric.side', 'server' }
+tasks.named('test') { useJUnitPlatform { excludeTags 'core-only' } }
+
+tasks.register('coreRuntimeTest', Test) {
+    description = 'Check the Fabric adapter with the optional demo and editor absent.'
+    dependsOn tasks.named('testClasses')
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.output + sourceSets.main.output + configurations.testRuntimeClasspath
+    filter {
+        includeTestsMatching 'dev.itemparams.fabric.CoreOnlyRuntimeTest'
+        includeTestsMatching 'dev.itemparams.fabric.RecipeWorkspaceTest'
+        includeTestsMatching 'dev.itemparams.fabric.StorageProductionTest'
+        includeTestsMatching 'dev.itemparams.fabric.NbtParameterStorageTest'
+        includeTestsMatching 'dev.itemparams.fabric.ItemInputFilterTest'
+    }
+}
+tasks.register('verifyCoreBoundary') {
+    dependsOn tasks.named('jar')
+    inputs.file tasks.named('jar').flatMap { it.archiveFile }
+    doLast {
+        def contents = zipTree(tasks.named('jar').get().archiveFile.get().asFile)
+        def leaked = contents.matching {
+            include 'dev/itemparams/fabric/machine/**', 'dev/itemparams/demo/**',
+                    'dev/itemparams/editor/**', 'assets/**', 'data/**', 'itemparams-demo-catalog/**'
+        }.files
+        if (!leaked.empty) throw new GradleException('Foundation JAR contains optional demo/editor content: ' + leaked)
+    }
+}
+tasks.named('check') { dependsOn tasks.named('coreRuntimeTest'), tasks.named('verifyCoreBoundary') }
+
+tasks.register('demoJar', Jar) {
+    dependsOn tasks.named('demoClasses')
+    from sourceSets.demo.output
+    archiveBaseName = 'item-parameters-demo'
+    archiveClassifier = 'dev'
+    destinationDirectory = layout.buildDirectory.dir('devlibs')
+}
+tasks.register('remapDemoJar', RemapJarTask) {
+    dependsOn tasks.named('demoJar')
+    inputFile = tasks.named('demoJar', Jar).flatMap { it.archiveFile }
+    classpath.from sourceSets.demo.compileClasspath
+    archiveBaseName = 'item-parameters-demo'
+    archiveClassifier = ''
+    addNestedDependencies = false
+}
+tasks.register('demoSourcesJar', Jar) {
+    from sourceSets.demo.allSource
+    archiveBaseName = 'item-parameters-demo'
+    archiveClassifier = 'sources'
+}
+tasks.named('assemble') { dependsOn tasks.named('remapDemoJar'), tasks.named('demoSourcesJar') }
+tasks.register('catalogBenchmark', Test) {
+    dependsOn tasks.named('testClasses')
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    useJUnitPlatform { includeTags 'benchmark'; excludeTags.clear() }
+    maxHeapSize = '2g'
+    testLogging { showStandardStreams = true }
+}
+[tasks.named('processResources'), tasks.named('processDemoResources')].each { resourceTask ->
+    resourceTask.configure {
+        includeEmptyDirs = false
+        inputs.property 'version', project.version
+        filesMatching('fabric.mod.json') { expand 'version': project.version }
+    }
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) { artifactId = 'item-parameters-fabric'; from components.java }
+    }
+}

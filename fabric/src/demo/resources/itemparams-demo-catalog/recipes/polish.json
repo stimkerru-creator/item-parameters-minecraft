@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "id": "example:polish",
+  "inputs": { "bottle": "minecraft:glass_bottle" },
+  "output": { "item": "minecraft:glass_bottle", "count": 1 },
+  "copy_common_from": "bottle",
+  "assignments": {
+    "example:volume": "${bottle::example:volume}",
+    "example:mass": "${bottle::example:mass}",
+    "example:thickness": "clamp(${bottle::example:thickness} - 0.1, 0, 10000)",
+    "example:removed_volume": "${bottle::example:removed_volume}"
+  }
+}

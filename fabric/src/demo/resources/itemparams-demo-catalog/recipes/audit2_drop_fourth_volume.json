@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "id": "audit:drop_fourth_volume_field",
+  "inputs": {
+    "billet": "minecraft:iron_ingot"
+  },
+  "output": {
+    "item": "minecraft:gold_ingot",
+    "count": 1
+  },
+  "copy_common_from": "billet",
+  "assignments": {
+    "audit2:purity_pct": "${billet::audit2:purity_pct} - 0.50",
+    "audit2:hardness_index": "${billet::audit2:hardness_index} + 1.25"
+  }
+}

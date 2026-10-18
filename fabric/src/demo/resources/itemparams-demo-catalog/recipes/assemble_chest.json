@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "example:assemble_chest",
+  "inputs": {
+    "wood": "minecraft:stick",
+    "bowl": "minecraft:bowl"
+  },
+  "output": { "item": "minecraft:chest", "count": 1 },
+  "assignments": {
+    "example:mass": "${wood::example:mass} + ${bowl::example:mass}",
+    "example:strength": "(${wood::example:strength} + ${bowl::example:strength}) / 2",
+    "example:quality": "${wood::example:quality} + ${bowl::example:quality}",
+    "example:moisture": "max(${wood::example:moisture}, ${bowl::example:moisture})",
+    "example:hardness": "${bowl::example:hardness}",
+    "example:precision": "sqrt(16)",
+    "example:volume": "(${wood::example:mass} + ${bowl::example:mass}) * 4",
+    "example:integrity": "(( ${wood::example:strength} + ${bowl::example:strength}) / 2) * ${bowl::example:hardness}"
+  }
+}

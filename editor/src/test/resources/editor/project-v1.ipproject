@@ -1,0 +1,120 @@
+{
+  "editorVersion": 1,
+  "items": [
+    {
+      "id": "minecraft:raw_iron",
+      "name": "Железная руда",
+      "fields": [
+        {
+          "id": "factory:mass",
+          "name": "Масса",
+          "value": "10",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "factory:density",
+          "name": "Плотность",
+          "value": "4",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "factory:hardness",
+          "name": "Твёрдость",
+          "value": "7",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "factory:purity",
+          "name": "Чистота",
+          "value": "90",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:iron_ingot",
+      "name": "Железный слиток",
+      "fields": [
+        {
+          "id": "factory:mass",
+          "name": "Масса",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "factory:density",
+          "name": "Плотность",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "factory:hardness",
+          "name": "Твёрдость",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "factory:purity",
+          "name": "Чистота",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "id": "editor:recipe_7ee135839f184e75bbfa0ec6d345fa53",
+      "name": "Переработка руды — пример",
+      "outputItemId": "minecraft:iron_ingot",
+      "copyCommonFrom": "ore",
+      "count": 1,
+      "inputs": [
+        {
+          "role": "ore",
+          "name": "Руда",
+          "itemId": "minecraft:raw_iron",
+          "sampleValues": {}
+        }
+      ],
+      "equations": [
+        {
+          "canonicalExpression": "${ore::factory:mass} * ${ore::factory:density}",
+          "outputFieldId": "factory:hardness",
+          "references": [
+            {
+              "role": "ore",
+              "fieldId": "factory:mass"
+            },
+            {
+              "role": "ore",
+              "fieldId": "factory:density"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "${ore::factory:hardness} + ${ore::factory:density}",
+          "outputFieldId": "factory:density",
+          "references": [
+            {
+              "role": "ore",
+              "fieldId": "factory:hardness"
+            },
+            {
+              "role": "ore",
+              "fieldId": "factory:density"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

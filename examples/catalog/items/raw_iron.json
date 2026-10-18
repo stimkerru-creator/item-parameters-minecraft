@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "item": "minecraft:raw_iron",
+  "fields": [
+    {"id": "factory:mass", "default": 1000, "min": 0},
+    {"id": "factory:purity", "default": 80, "min": 0, "max": 100}
+  ]
+}

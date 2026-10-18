@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "item": "minecraft:apple",
+  "fields": [
+    {
+      "id": "audit4:mass_g",
+      "default": 0.18
+    },
+    {
+      "id": "audit4:purity_pct",
+      "default": 95
+    },
+    {
+      "id": "audit4:volume_cm3",
+      "default": 0.1
+    }
+  ]
+}

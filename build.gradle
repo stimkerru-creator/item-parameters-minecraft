@@ -1,0 +1,58 @@
+plugins { id 'base' }
+
+allprojects {
+    group = rootProject.property('group')
+    version = rootProject.property('version')
+    repositories { mavenCentral() }
+}
+
+subprojects {
+    plugins.withId('java') {
+        java {
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
+            withSourcesJar()
+        }
+        tasks.withType(JavaCompile).configureEach {
+            options.release = 17
+            options.encoding = 'UTF-8'
+        }
+        tasks.withType(Test).configureEach {
+            useJUnitPlatform { excludeTags 'benchmark' }
+            maxHeapSize = '512m'
+            maxParallelForks = 1
+            jvmArgs '-XX:ActiveProcessorCount=2'
+            systemProperty 'java.awt.headless', 'true'
+        }
+        tasks.withType(Jar).configureEach {
+            includeEmptyDirs = false
+            preserveFileTimestamps = false
+            reproducibleFileOrder = true
+            from(rootProject.file('LICENSE')) { into 'META-INF'; rename { 'LICENSE-item-parameters.txt' } }
+        }
+    }
+}
+
+tasks.named('wrapper') {
+    gradleVersion = '8.10.2'
+    distributionSha256Sum = '31c55713e40233a8303827ceb42ca48a47267a0ad4bab9177123121e71524c26'
+}
+
+gradle.projectsEvaluated {
+    tasks.named('check') { dependsOn subprojects.collect { it.tasks.named('check') } }
+    def artifacts = [project(':core').tasks.named('jar'), project(':core').tasks.named('sourcesJar'),
+                     project(':editor').tasks.named('editorJar'), project(':editor').tasks.named('sourcesJar')]
+    if (findProject(':fabric') != null) {
+        artifacts += ['remapJar', 'remapSourcesJar', 'remapDemoJar', 'demoSourcesJar'].collect {
+            project(':fabric').tasks.named(it)
+        }
+    }
+    tasks.register('releaseArtifacts', Sync) {
+        group = 'build'
+        description = 'Collect the independent library, editor, Fabric mod and optional demo JARs.'
+        dependsOn artifacts
+        artifacts.each { artifact -> from artifact.flatMap { it.archiveFile } }
+        into layout.buildDirectory.dir('libs')
+    }
+    tasks.named('assemble') { dependsOn tasks.named('releaseArtifacts') }
+}

@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'item-parameters'
+include 'core', 'editor'
+// Avoid configuring Loom or resolving Minecraft when only the Java library is needed.
+if (!providers.gradleProperty('standalone').map { it.toBoolean() }.getOrElse(false)) {
+    include 'fabric'
+}

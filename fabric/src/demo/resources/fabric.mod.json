@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "itemparams_demo",
+  "version": "${version}",
+  "name": "Item Parameters Optional Demo",
+  "description": "Optional in-world processor using the same server catalog as the Item Parameters Foundation library.",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.itemparams.demo.ItemParametersDemoMod"],
+    "client": ["dev.itemparams.fabric.machine.ProcessorClient"]
+  },
+  "license": "MIT",
+  "depends": {"itemparams": "${version}", "fabricloader": ">=0.15.11", "fabric-api": "*", "minecraft": "1.20.1", "java": ">=17"}
+}

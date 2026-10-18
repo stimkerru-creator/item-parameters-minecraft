@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "audit:mix_six_three_five_to_four",
+  "inputs": {
+    "core": "minecraft:amethyst_shard",
+    "binder": "minecraft:blaze_powder",
+    "reinforcement": "minecraft:prismarine_shard"
+  },
+  "output": {
+    "item": "minecraft:clock",
+    "count": 1
+  },
+  "assignments": {
+    "audit4:mass_g": "${core::audit4:mass_g} + ${binder::audit4:mass_g} + ${reinforcement::audit4:mass_g}",
+    "audit4:purity_pct": "(${core::audit4:mass_g} * ${core::audit4:purity_pct} + ${binder::audit4:mass_g} * ${binder::audit4:purity_pct} + ${reinforcement::audit4:mass_g} * ${reinforcement::audit4:purity_pct}) / (${core::audit4:mass_g} + ${binder::audit4:mass_g} + ${reinforcement::audit4:mass_g})",
+    "audit4:volume_cm3": "${core::audit4:volume_cm3} + ${binder::audit4:volume_cm3} + ${reinforcement::audit4:volume_cm3}",
+    "audit4:integrity_index": "${core::audit4:quality_index} + ${core::audit4:strength_score} - ${core::audit4:wear} - ${reinforcement::audit4:wear} + ${binder::audit4:purity_pct} / 10"
+  }
+}

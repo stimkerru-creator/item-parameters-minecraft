@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "item": "minecraft:book",
+  "fields": [
+    {
+      "id": "audit4:mass_g",
+      "default": 0.4
+    },
+    {
+      "id": "audit4:purity_pct",
+      "default": 99
+    },
+    {
+      "id": "audit4:volume_cm3",
+      "default": 0.5
+    },
+    {
+      "id": "audit4:strength_score",
+      "default": 2
+    },
+    {
+      "id": "audit4:wear",
+      "default": 1
+    }
+  ]
+}

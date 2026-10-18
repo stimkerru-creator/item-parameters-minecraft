@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "item": "minecraft:paper",
+  "fields": [
+    {
+      "id": "audit3:density_g_cm3",
+      "default": 0.8
+    },
+    {
+      "id": "audit3:volume_cm3",
+      "default": 0.05
+    },
+    {
+      "id": "audit3:purity_pct",
+      "default": 90.0
+    },
+    {
+      "id": "audit3:energy_kj",
+      "default": 0.01
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "audit:line1_recut_stage2",
+  "inputs": {
+    "bowl": "minecraft:bowl"
+  },
+  "output": {
+    "item": "minecraft:glass_bottle",
+    "count": 1
+  },
+  "assignments": {
+    "example:volume": "${bowl::example:precision} * ${bowl::example:quality}",
+    "example:mass": "${bowl::example:mass} + ${bowl::example:hardness}",
+    "example:thickness": "${bowl::example:strength} / 3",
+    "example:removed_volume": "${bowl::example:moisture} + 2"
+  }
+}

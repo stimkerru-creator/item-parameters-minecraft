@@ -1,0 +1,37 @@
+Item Parameters
+
+The core resolves the following ready-made libraries through Gradle/Maven.
+The Fabric distribution embeds its core and mathematical runtime as nested JARs;
+the standalone editor bundles the required classes. Third-party licenses and
+notices are retained in META-INF/licenses and in the original nested libraries.
+
+com.ezylang:EvalEx:3.7.0
+Copyright Udo Klimaschewski and EvalEx contributors. Apache License 2.0.
+https://github.com/ezylang/EvalEx/blob/3.7.0/LICENSE
+
+org.typelevel:spire_2.13:0.18.0
+org.typelevel:spire-macros_2.13:0.18.0
+org.typelevel:spire-platform_2.13:0.18.0
+org.typelevel:spire-util_2.13:0.18.0
+Copyright Erik Osheim, Tom Switzer and Spire contributors. MIT License.
+https://github.com/typelevel/spire/blob/v0.18.0/COPYING
+
+org.typelevel:algebra_2.13:2.8.0
+org.typelevel:cats-kernel_2.13:2.8.0
+Copyright Typelevel and project contributors. MIT License.
+https://github.com/typelevel/cats/blob/v2.8.0/COPYING
+Algebra 2.8.0 is built from the Cats repository and uses the same COPYING above.
+
+org.scala-lang:scala-library:2.13.8
+Copyright EPFL, Lightbend, Inc. and Scala contributors. Apache License 2.0.
+https://github.com/scala/scala/blob/v2.13.8/LICENSE
+
+com.google.code.gson:gson:2.10.1
+Copyright 2008 Google Inc. Apache License 2.0.
+https://github.com/google/gson/blob/gson-parent-2.10.1/LICENSE
+Gson is a Java core dependency for shared strict JSON support. Minecraft supplies
+Gson for the Fabric runtime; the executable editor includes its own dependency.
+The full Apache License 2.0 is in META-INF/licenses/EvalEx-LICENSE.txt.
+
+The source project remains MIT-licensed. No Python, SymPy, Symja,
+EvalEx-big-math or custom arithmetic implementation is embedded in the runtime.

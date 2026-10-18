@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "id": "audit:assembly_four",
+  "inputs": {
+    "base": "minecraft:emerald",
+    "filler": "minecraft:quartz",
+    "cover": "minecraft:leather",
+    "label": "minecraft:paper"
+  },
+  "output": {
+    "item": "minecraft:lapis_lazuli",
+    "count": 1
+  },
+  "assignments": {
+    "audit3:mass_g": "${base::audit3:mass_g} + ${filler::audit3:density_g_cm3} * ${filler::audit3:volume_cm3} + ${cover::audit3:density_g_cm3} * ${cover::audit3:volume_cm3} + ${label::audit3:density_g_cm3} * ${label::audit3:volume_cm3}",
+    "audit3:purity_pct": "(${base::audit3:mass_g} * ${base::audit3:purity_pct} + ${filler::audit3:density_g_cm3} * ${filler::audit3:volume_cm3} * ${filler::audit3:purity_pct} + ${cover::audit3:density_g_cm3} * ${cover::audit3:volume_cm3} * ${cover::audit3:purity_pct} + ${label::audit3:density_g_cm3} * ${label::audit3:volume_cm3} * ${label::audit3:purity_pct}) / (${base::audit3:mass_g} + ${filler::audit3:density_g_cm3} * ${filler::audit3:volume_cm3} + ${cover::audit3:density_g_cm3} * ${cover::audit3:volume_cm3} + ${label::audit3:density_g_cm3} * ${label::audit3:volume_cm3})",
+    "audit3:volume_cm3": "${base::audit3:volume_cm3} + ${filler::audit3:volume_cm3} + ${cover::audit3:volume_cm3} + ${label::audit3:volume_cm3}",
+    "audit3:energy_kj": "${base::audit3:energy_kj} + ${filler::audit3:energy_kj} + ${cover::audit3:energy_kj} + ${label::audit3:energy_kj}"
+  }
+}

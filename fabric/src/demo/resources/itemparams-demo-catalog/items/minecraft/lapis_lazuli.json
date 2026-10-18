@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "item": "minecraft:lapis_lazuli",
+  "fields": [
+    {
+      "id": "audit3:mass_g",
+      "default": 0.0
+    },
+    {
+      "id": "audit3:purity_pct",
+      "default": 0.0
+    },
+    {
+      "id": "audit3:volume_cm3",
+      "default": 0.0
+    },
+    {
+      "id": "audit3:energy_kj",
+      "default": 0.0
+    }
+  ]
+}

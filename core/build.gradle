@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+base { archivesName = 'item-parameters-core' }
+dependencies {
+    implementation 'com.ezylang:EvalEx:3.7.0'
+    implementation 'org.typelevel:spire_2.13:0.18.0'
+    // StrictJson is shared by the editor and Fabric; its public API uses Gson types.
+    api 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+}
+
+tasks.register('verifyCoreBoundary') {
+    dependsOn tasks.named('jar')
+    inputs.file tasks.named('jar').flatMap { it.archiveFile }
+    doLast {
+        zipTree(tasks.named('jar').get().archiveFile.get().asFile).matching { include '**/*.class' }.each { file ->
+            def constants = new String(file.bytes, java.nio.charset.StandardCharsets.ISO_8859_1)
+            if (constants.contains('net/minecraft/') || constants.contains('net/fabricmc/') ||
+                    constants.contains('dev/itemparams/editor/') || constants.contains('dev/itemparams/fabric/')) {
+                throw new GradleException("Core contains a platform/UI dependency: ${file.name}")
+            }
+        }
+    }
+}
+tasks.named('check') { dependsOn tasks.named('verifyCoreBoundary') }
+
+tasks.register('coreBenchmark', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.itemparams.core.CoreBenchmark'
+    maxHeapSize = '256m'
+    args '100000'
+}
+tasks.register('multiInputBenchmark', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.itemparams.production.MultiInputBenchmark'
+    maxHeapSize = '256m'
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'item-parameters-core'
+            from components.java
+            pom {
+                name = 'Item Parameters Core'
+                description = 'Minecraft-independent int32 parameter arrays and compiled multi-input formulas.'
+                licenses { license { name = 'MIT'; url = 'https://opensource.org/license/mit/' } }
+            }
+        }
+    }
+}

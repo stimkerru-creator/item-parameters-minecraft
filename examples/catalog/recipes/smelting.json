@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "factory:smelting",
+  "inputs": {"ore": "minecraft:raw_iron"},
+  "output": {"item": "minecraft:iron_ingot", "count": 1},
+  "assignments": {
+    "factory:mass": "${ore::factory:mass} * ${ore::factory:purity} / 100 * 0.95",
+    "factory:purity": "clamp(${ore::factory:purity} + 10, 0, 100)",
+    "factory:hardness": "25"
+  }
+}

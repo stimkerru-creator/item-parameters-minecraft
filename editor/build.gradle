@@ -1,0 +1,23 @@
+plugins { id 'application' }
+
+base { archivesName = 'item-parameters-editor' }
+application { mainClass = 'dev.itemparams.editor.ArrayEditor' }
+dependencies {
+    implementation project(':core')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+}
+
+// Keep a normal thin artifact for project dependencies; distribute the runnable JAR separately.
+tasks.named('jar') { archiveClassifier = 'thin' }
+tasks.register('editorJar', Jar) {
+    dependsOn tasks.named('classes')
+    dependsOn configurations.runtimeClasspath
+    archiveClassifier = ''
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes 'Main-Class': application.mainClass.get() }
+    from sourceSets.main.output
+    from { configurations.runtimeClasspath.collect { zipTree(it) } }
+    exclude 'META-INF/*.SF', 'META-INF/*.RSA', 'META-INF/*.DSA', 'META-INF/MANIFEST.MF'
+    exclude 'module-info.class', 'META-INF/versions/**/module-info.class'
+}
+tasks.named('assemble') { dependsOn tasks.named('editorJar') }

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "id": "audit:assembly_two",
+  "inputs": {
+    "machined": "minecraft:compass",
+    "additive": "minecraft:coal"
+  },
+  "output": {
+    "item": "minecraft:emerald",
+    "count": 1
+  },
+  "assignments": {
+    "audit3:mass_g": "${machined::audit3:mass_g} + ${additive::audit3:density_g_cm3} * ${additive::audit3:volume_cm3}",
+    "audit3:purity_pct": "(${machined::audit3:mass_g} * ${machined::audit3:purity_pct} + ${additive::audit3:density_g_cm3} * ${additive::audit3:volume_cm3} * ${additive::audit3:purity_pct}) / (${machined::audit3:mass_g} + ${additive::audit3:density_g_cm3} * ${additive::audit3:volume_cm3})",
+    "audit3:volume_cm3": "${machined::audit3:volume_cm3} + ${additive::audit3:volume_cm3}",
+    "audit3:energy_kj": "${machined::audit3:energy_kj} + ${additive::audit3:energy_kj}"
+  }
+}

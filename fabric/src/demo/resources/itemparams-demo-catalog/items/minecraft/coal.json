@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "item": "minecraft:coal",
+  "fields": [
+    {
+      "id": "audit3:density_g_cm3",
+      "default": 1.0
+    },
+    {
+      "id": "audit3:volume_cm3",
+      "default": 0.1
+    },
+    {
+      "id": "audit3:purity_pct",
+      "default": 100.0
+    },
+    {
+      "id": "audit3:energy_kj",
+      "default": 0.05
+    }
+  ]
+}

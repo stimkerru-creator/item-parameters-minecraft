@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "item": "minecraft:blaze_powder",
+  "fields": [
+    {
+      "id": "audit4:mass_g",
+      "default": 0.2
+    },
+    {
+      "id": "audit4:purity_pct",
+      "default": 70
+    },
+    {
+      "id": "audit4:volume_cm3",
+      "default": 0.05
+    }
+  ]
+}

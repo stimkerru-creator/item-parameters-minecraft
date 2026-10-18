@@ -1,0 +1,777 @@
+{
+  "editorVersion": 2,
+  "items": [
+    {
+      "id": "minecraft:raw_iron",
+      "name": "Рудное железо",
+      "fields": [
+        {
+          "id": "lesson:mass",
+          "name": "Масса",
+          "value": "1000",
+          "minimum": "0",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:purity",
+          "name": "Чистота",
+          "value": "80",
+          "minimum": "0",
+          "maximum": "100"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:iron_ingot",
+      "name": "Железный слиток",
+      "fields": [
+        {
+          "id": "lesson:mass",
+          "name": "Масса",
+          "value": "0",
+          "minimum": "0",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:purity",
+          "name": "Чистота",
+          "value": "0",
+          "minimum": "0",
+          "maximum": "100"
+        },
+        {
+          "id": "lesson:hardness",
+          "name": "Твёрдость",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:copper_ingot",
+      "name": "Пластина — учебный медный слиток",
+      "fields": [
+        {
+          "id": "lesson:mass",
+          "name": "Масса",
+          "value": "200",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:strength",
+          "name": "Прочность",
+          "value": "30",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:gold_nugget",
+      "name": "Добавка — учебный золотой самородок",
+      "fields": [
+        {
+          "id": "lesson:mass",
+          "name": "Масса",
+          "value": "50",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:factor",
+          "name": "Коэффициент",
+          "value": "1.2",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:clock",
+      "name": "Механизм — учебные часы",
+      "fields": [
+        {
+          "id": "lesson:mass",
+          "name": "Масса",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:strength",
+          "name": "Прочность",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:root",
+          "name": "Корневой показатель",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:dirt",
+      "name": "Земля — 20 учебных полей",
+      "fields": [
+        {
+          "id": "lesson:f1",
+          "name": "Параметр 1",
+          "value": "1",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f2",
+          "name": "Параметр 2",
+          "value": "2",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f3",
+          "name": "Параметр 3",
+          "value": "3",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f4",
+          "name": "Параметр 4",
+          "value": "4",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f5",
+          "name": "Параметр 5",
+          "value": "5",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f6",
+          "name": "Параметр 6",
+          "value": "6",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f7",
+          "name": "Параметр 7",
+          "value": "7",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f8",
+          "name": "Параметр 8",
+          "value": "8",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f9",
+          "name": "Параметр 9",
+          "value": "9",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f10",
+          "name": "Параметр 10",
+          "value": "10",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f11",
+          "name": "Параметр 11",
+          "value": "11",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f12",
+          "name": "Параметр 12",
+          "value": "12",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f13",
+          "name": "Параметр 13",
+          "value": "13",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f14",
+          "name": "Параметр 14",
+          "value": "14",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f15",
+          "name": "Параметр 15",
+          "value": "15",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f16",
+          "name": "Параметр 16",
+          "value": "16",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f17",
+          "name": "Параметр 17",
+          "value": "17",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f18",
+          "name": "Параметр 18",
+          "value": "18",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f19",
+          "name": "Параметр 19",
+          "value": "19",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f20",
+          "name": "Параметр 20",
+          "value": "20",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    },
+    {
+      "id": "minecraft:stone",
+      "name": "Камень — 20 учебных полей",
+      "fields": [
+        {
+          "id": "lesson:f1",
+          "name": "Параметр 1",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f2",
+          "name": "Параметр 2",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f3",
+          "name": "Параметр 3",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f4",
+          "name": "Параметр 4",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f5",
+          "name": "Параметр 5",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f6",
+          "name": "Параметр 6",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f7",
+          "name": "Параметр 7",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f8",
+          "name": "Параметр 8",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f9",
+          "name": "Параметр 9",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f10",
+          "name": "Параметр 10",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f11",
+          "name": "Параметр 11",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f12",
+          "name": "Параметр 12",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f13",
+          "name": "Параметр 13",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f14",
+          "name": "Параметр 14",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f15",
+          "name": "Параметр 15",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f16",
+          "name": "Параметр 16",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f17",
+          "name": "Параметр 17",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f18",
+          "name": "Параметр 18",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f19",
+          "name": "Параметр 19",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        },
+        {
+          "id": "lesson:f20",
+          "name": "Параметр 20",
+          "value": "0",
+          "minimum": "-21474836.48",
+          "maximum": "21474836.47"
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "id": "lesson:smelting_a",
+      "name": "01 — Плавка A: 760 / 90 / 25",
+      "outputItemId": "minecraft:iron_ingot",
+      "count": 1,
+      "inputs": [
+        {
+          "role": "in1",
+          "name": "Рудное железо",
+          "itemId": "minecraft:raw_iron",
+          "sampleValues": {},
+          "symbols": {
+            "lesson:mass": "M",
+            "lesson:purity": "P"
+          }
+        }
+      ],
+      "equations": [
+        {
+          "canonicalExpression": "${in1::lesson:mass} * ${in1::lesson:purity} / (100) * (0.95)",
+          "outputFieldId": "lesson:mass",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in1",
+              "fieldId": "lesson:purity"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "clamp ( ${in1::lesson:purity} + (10) , (0) , (100) )",
+          "outputFieldId": "lesson:purity",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:purity"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "(25)",
+          "outputFieldId": "lesson:hardness",
+          "references": []
+        }
+      ],
+      "outputSymbols": {
+        "lesson:mass": "M",
+        "lesson:purity": "P",
+        "lesson:hardness": "H"
+      }
+    },
+    {
+      "id": "lesson:smelting_b",
+      "name": "02 — Плавка B: 784 / 95 / 30",
+      "outputItemId": "minecraft:iron_ingot",
+      "count": 1,
+      "inputs": [
+        {
+          "role": "in1",
+          "name": "Рудное железо",
+          "itemId": "minecraft:raw_iron",
+          "sampleValues": {},
+          "symbols": {
+            "lesson:mass": "M",
+            "lesson:purity": "P"
+          }
+        }
+      ],
+      "equations": [
+        {
+          "canonicalExpression": "${in1::lesson:mass} * ${in1::lesson:purity} / (100) * (0.98)",
+          "outputFieldId": "lesson:mass",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in1",
+              "fieldId": "lesson:purity"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "clamp ( ${in1::lesson:purity} + (15) , (0) , (100) )",
+          "outputFieldId": "lesson:purity",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:purity"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "(30)",
+          "outputFieldId": "lesson:hardness",
+          "references": []
+        }
+      ],
+      "outputSymbols": {
+        "lesson:mass": "M",
+        "lesson:purity": "P",
+        "lesson:hardness": "H"
+      }
+    },
+    {
+      "id": "lesson:three_inputs",
+      "name": "03 — Три компонента: 1260 / 20.01 / 12.92",
+      "outputItemId": "minecraft:clock",
+      "count": 1,
+      "inputs": [
+        {
+          "role": "in1",
+          "name": "Рудное железо",
+          "itemId": "minecraft:raw_iron",
+          "sampleValues": {},
+          "symbols": {
+            "lesson:mass": "M1",
+            "lesson:purity": "P"
+          }
+        },
+        {
+          "role": "in2",
+          "name": "Пластина — учебный медный слиток",
+          "itemId": "minecraft:copper_ingot",
+          "sampleValues": {},
+          "symbols": {
+            "lesson:mass": "M2",
+            "lesson:strength": "H"
+          }
+        },
+        {
+          "role": "in3",
+          "name": "Добавка — учебный золотой самородок",
+          "itemId": "minecraft:gold_nugget",
+          "sampleValues": {},
+          "symbols": {
+            "lesson:mass": "M3",
+            "lesson:factor": "K"
+          }
+        }
+      ],
+      "equations": [
+        {
+          "canonicalExpression": "( ${in1::lesson:mass} * ${in1::lesson:purity} / (100) + ${in2::lesson:mass} + ${in3::lesson:mass} ) * ${in3::lesson:factor}",
+          "outputFieldId": "lesson:mass",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in1",
+              "fieldId": "lesson:purity"
+            },
+            {
+              "role": "in2",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in3",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in3",
+              "fieldId": "lesson:factor"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "sqrt ( ${in2::lesson:strength} ^ (2) + ${in3::lesson:factor} ^ (2) ) / ( (1) + ${in3::lesson:mass} / (100) )",
+          "outputFieldId": "lesson:strength",
+          "references": [
+            {
+              "role": "in2",
+              "fieldId": "lesson:strength"
+            },
+            {
+              "role": "in3",
+              "fieldId": "lesson:factor"
+            },
+            {
+              "role": "in3",
+              "fieldId": "lesson:mass"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "root ( ${in1::lesson:mass} + ${in2::lesson:mass} + ${in3::lesson:mass} , (3) ) * ${in3::lesson:factor}",
+          "outputFieldId": "lesson:root",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in2",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in3",
+              "fieldId": "lesson:mass"
+            },
+            {
+              "role": "in3",
+              "fieldId": "lesson:factor"
+            }
+          ]
+        }
+      ],
+      "outputSymbols": {
+        "lesson:mass": "M",
+        "lesson:strength": "R",
+        "lesson:root": "S"
+      }
+    },
+    {
+      "id": "lesson:milling",
+      "name": "04 — Фрезеровка слитка: 759.80 / 90 / 30",
+      "outputItemId": "minecraft:iron_ingot",
+      "count": 1,
+      "inputs": [
+        {
+          "role": "in1",
+          "name": "Железный слиток",
+          "itemId": "minecraft:iron_ingot",
+          "sampleValues": {
+            "lesson:mass": "760",
+            "lesson:purity": "90",
+            "lesson:hardness": "25"
+          },
+          "symbols": {
+            "lesson:mass": "M",
+            "lesson:purity": "P",
+            "lesson:hardness": "H"
+          }
+        }
+      ],
+      "equations": [
+        {
+          "canonicalExpression": "${in1::lesson:mass} - (0.2)",
+          "outputFieldId": "lesson:mass",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:mass"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "${in1::lesson:purity}",
+          "outputFieldId": "lesson:purity",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:purity"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "${in1::lesson:hardness} * (1.2)",
+          "outputFieldId": "lesson:hardness",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:hardness"
+            }
+          ]
+        }
+      ],
+      "outputSymbols": {
+        "lesson:mass": "M",
+        "lesson:purity": "P",
+        "lesson:hardness": "H"
+      }
+    },
+    {
+      "id": "lesson:twenty_fields",
+      "name": "05 — 20 полей: изменить только 3 и 7",
+      "outputItemId": "minecraft:stone",
+      "copyCommonFrom": "in1",
+      "count": 1,
+      "inputs": [
+        {
+          "role": "in1",
+          "name": "Земля — 20 учебных полей",
+          "itemId": "minecraft:dirt",
+          "sampleValues": {},
+          "symbols": {
+            "lesson:f1": "A1",
+            "lesson:f2": "A2",
+            "lesson:f3": "A3",
+            "lesson:f4": "A4",
+            "lesson:f5": "A5",
+            "lesson:f6": "A6",
+            "lesson:f7": "A7",
+            "lesson:f8": "A8",
+            "lesson:f9": "A9",
+            "lesson:f10": "A10",
+            "lesson:f11": "A11",
+            "lesson:f12": "A12",
+            "lesson:f13": "A13",
+            "lesson:f14": "A14",
+            "lesson:f15": "A15",
+            "lesson:f16": "A16",
+            "lesson:f17": "A17",
+            "lesson:f18": "A18",
+            "lesson:f19": "A19",
+            "lesson:f20": "A20"
+          }
+        }
+      ],
+      "equations": [
+        {
+          "canonicalExpression": "${in1::lesson:f3} + ${in1::lesson:f7}",
+          "outputFieldId": "lesson:f3",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:f3"
+            },
+            {
+              "role": "in1",
+              "fieldId": "lesson:f7"
+            }
+          ]
+        },
+        {
+          "canonicalExpression": "${in1::lesson:f7} * (2)",
+          "outputFieldId": "lesson:f7",
+          "references": [
+            {
+              "role": "in1",
+              "fieldId": "lesson:f7"
+            }
+          ]
+        }
+      ],
+      "outputSymbols": {
+        "lesson:f1": "A1",
+        "lesson:f2": "A2",
+        "lesson:f3": "A3",
+        "lesson:f4": "A4",
+        "lesson:f5": "A5",
+        "lesson:f6": "A6",
+        "lesson:f7": "A7",
+        "lesson:f8": "A8",
+        "lesson:f9": "A9",
+        "lesson:f10": "A10",
+        "lesson:f11": "A11",
+        "lesson:f12": "A12",
+        "lesson:f13": "A13",
+        "lesson:f14": "A14",
+        "lesson:f15": "A15",
+        "lesson:f16": "A16",
+        "lesson:f17": "A17",
+        "lesson:f18": "A18",
+        "lesson:f19": "A19",
+        "lesson:f20": "A20"
+      }
+    }
+  ]
+}

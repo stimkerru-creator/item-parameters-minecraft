@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "editor:recipe_eeb62ebce8f2437cae896409271a868d",
+      "inputs": {
+        "ore": "minecraft:raw_iron"
+      },
+      "output": {
+        "item": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "assignments": {
+        "factory:mass": "${ore::factory:mass} * ${ore::factory:purity} / (100) * (0.95)",
+        "factory:purity": "clamp ( ${ore::factory:purity} + (10) , (0) , (100) )",
+        "factory:hardness": "(25)"
+      }
+    }
+  ]
+}

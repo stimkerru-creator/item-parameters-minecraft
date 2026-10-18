@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "example:choice_2",
+  "inputs": {
+    "bottle": "minecraft:glass_bottle"
+  },
+  "output": {
+    "item": "minecraft:glass_bottle",
+    "count": 1
+  },
+  "copy_common_from": "bottle",
+  "assignments": {
+    "example:volume": "max(0, ${bottle::example:volume} - 2)",
+    "example:mass": "${bottle::example:mass} * (max(0, ${bottle::example:volume} - 2) / max(1, ${bottle::example:volume}))",
+    "example:removed_volume": "2"
+  }
+}

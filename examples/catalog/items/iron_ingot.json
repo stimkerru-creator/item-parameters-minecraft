@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "item": "minecraft:iron_ingot",
+  "fields": [
+    {"id": "factory:mass", "default": 0, "min": 0},
+    {"id": "factory:purity", "default": 0, "min": 0, "max": 100},
+    {"id": "factory:hardness", "default": 0}
+  ]
+}

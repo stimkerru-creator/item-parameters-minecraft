@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "item": "minecraft:clock",
+  "fields": [
+    {
+      "id": "audit4:mass_g",
+      "default": 0
+    },
+    {
+      "id": "audit4:purity_pct",
+      "default": 0
+    },
+    {
+      "id": "audit4:volume_cm3",
+      "default": 0
+    },
+    {
+      "id": "audit4:integrity_index",
+      "default": 0
+    }
+  ]
+}

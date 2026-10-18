@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "item": "minecraft:chest",
+  "fields": [
+    { "id": "example:mass", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:strength", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:quality", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:moisture", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:hardness", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:precision", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:volume", "default": 0, "min": 0, "max": 1000000 },
+    { "id": "example:integrity", "default": 0, "min": 0, "max": 1000000 }
+  ]
+}

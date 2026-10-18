@@ -1,0 +1,14 @@
+{
+  "block.itemparams_demo.processor": "Параметрический станок",
+  "container.itemparams_demo.processor": "Параметрический станок",
+  "gui.itemparams_demo.inputs": "Входы",
+  "gui.itemparams_demo.output": "Выход",
+  "gui.itemparams_demo.idle": "Ожидание входов",
+  "gui.itemparams_demo.working": "Обработка",
+  "gui.itemparams_demo.output_full": "Выход занят или несовместим",
+  "gui.itemparams_demo.invalid_recipe": "Нет подходящего рецепта",
+  "gui.itemparams_demo.error": "Ошибка входа или формулы",
+  "gui.itemparams_demo.no_recipes": "Нет настроенных рецептов",
+  "gui.itemparams_demo.recipe_locked": "Уберите входы для смены рецепта",
+  "gui.itemparams_demo.reset": "Сброс"
+}
